@@ -1,0 +1,2 @@
+# libft42
+mylibft
