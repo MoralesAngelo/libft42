@@ -1,8 +1,6 @@
 NAME = libft.a
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-AR = ar rcs
-RM = rm -f
 
 SRCS = 			ft_atoi.c \
 				ft_bzero.c \
@@ -51,26 +49,28 @@ BONUSSRC =		ft_lstadd_back_bonus.c \
 
 OBJS = $(SRCS:.c=.o)
 BONUSSOBJS = $(BONUSSRC:.c=.o)
-INCLUDE = libft.h
 
 all: $(NAME)
 
-$(NAME): $(OBJS) $(INCLUDE)
-	$(AR) $(NAME) $(OBJS)
+$(NAME): $(OBJS)
+				ar -cr $(NAME) $(OBJS)
 
-bonus: $(BONUSSOBJS) $(INCLUDE)
-	$(AR) $(NAME) $(BONUSSOBJS)
-	@touch .bonus
+bonus: $(BONUSSOBJS) bonus_complete
+
+bonus_complete:	$(BONUSSOBJS)
+				ar -cr $(NAME) $(BONUSSOBJS)
+				touch bonus_complete
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c -o $@ $<
 
 clean:
-	$(RM) $(OBJS) $(BONUSSOBJS)
+		rm -f $(OBJS) $(BONUSSOBJS)
+		rm -f bonus_complete
 
 fclean: clean
-	$(RM) $(NAME)
+		rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re bonus
+.PHONY: all bonus_complete clean fclean re bonus

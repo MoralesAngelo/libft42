@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amorales <amorales@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 16:14:15 by amorales          #+#    #+#             */
-/*   Updated: 2024/10/16 19:27:48 by amorales         ###   ########.fr       */
+/*   Updated: 2024/10/16 20:53:05 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,26 @@
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*temp;
-	t_list	*new_list;
+	t_list	*list;
+	t_list	*node;
+	void		*content;
 
 	if (!lst || !f || !del)
 		return (NULL);
-	new_list = NULL;
-	while (lst)
+	list = NULL;
+	temp = lst;
+	while (temp)
 	{
-		temp = ft_lstnew(f(lst->content));
-		if (!temp)
+		content = f(temp->content);
+		node = ft_lstnew(content);
+		if (!node)
 		{
-			ft_lstclear(&new_list, del);
+			free(content);
+			ft_lstclear(&list, del);
 			return (NULL);
 		}
-		ft_lstadd_back(&new_list, temp);
-		lst = lst->next;
+		ft_lstadd_back(&list, node);
+		temp = temp->next;
 	}
-	return (new_list);
+	return (list);
 }
