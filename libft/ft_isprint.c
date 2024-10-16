@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: amorales <amorales@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 16:59:20 by amorales          #+#    #+#             */
-/*   Updated: 2024/10/16 15:29:16 by mac              ###   ########.fr       */
+/*   Updated: 2024/10/13 18:58:06 by amorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,11 @@
 
 int	ft_isprint(int c)
 {
-	if ((c >= 32) && (c <= 126))
-		return (1);
-	else
-		return (0);
+	return (c >= 32 && c <= 127);
 }
 
 /*
-int	main(void)
+int	main(void)s
 {
 	int	c = 45;
 

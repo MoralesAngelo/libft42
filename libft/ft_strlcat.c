@@ -6,23 +6,11 @@
 /*   By: amorales <amorales@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 17:48:42 by amorales          #+#    #+#             */
-/*   Updated: 2024/10/13 19:00:02 by amorales         ###   ########.fr       */
+/*   Updated: 2024/10/16 19:26:44 by amorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-size_t	ft_strlen(const char *str)
-{
-	size_t	length;
-
-	length = 0;
-	while (str[length] != '\0')
-	{
-		length++;
-	}
-	return (length);
-}
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {

@@ -6,7 +6,7 @@
 /*   By: amorales <amorales@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 13:27:35 by amorales          #+#    #+#             */
-/*   Updated: 2024/10/13 19:00:14 by amorales         ###   ########.fr       */
+/*   Updated: 2024/10/16 19:26:43 by amorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;
 
-	if (src == NULL)
-		return (0);
 	i = 0;
 	if (size)
 	{

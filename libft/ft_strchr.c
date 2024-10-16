@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: amorales <amorales@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 14:14:40 by amorales          #+#    #+#             */
-/*   Updated: 2024/10/15 16:24:31 by mac              ###   ########.fr       */
+/*   Updated: 2024/10/13 18:59:44 by amorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,13 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	unsigned char new_c;
-
-	new_c = (unsigned char)c;
-	
 	while (*s)
 	{
-		if (*s == new_c)
+		if (*s == (char)c)
 			return ((char *)s);
 		s++;
 	}
-	if (new_c == '\0')
+	if (c == '\0')
 		return ((char *)s);
 	return (NULL);
 }

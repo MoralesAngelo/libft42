@@ -3,31 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: amorales <amorales@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 15:03:47 by amorales          #+#    #+#             */
-/*   Updated: 2024/10/16 17:09:26 by mac              ###   ########.fr       */
+/*   Updated: 2024/10/13 19:54:15 by amorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-#include <stddef.h>
-
 void	ft_bzero(void *s, size_t n)
 {
-	size_t	i;
-	char	*ptr;
+	char	*tmp;
 
-	ptr = (char *)s;
-	i = 0;
-	while (i < n)
+	tmp = (char *)s;
+	while (n > 0)
 	{
-		ptr[i] = 0; 
-		i++;
+		*(tmp++) = 0;
+		n--;
 	}
 }
-
 
 /*
 void	ft_bzero(void *s, size_t n)
